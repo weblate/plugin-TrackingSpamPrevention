@@ -96,9 +96,13 @@ class TrackingSpamPrevention extends \Piwik\Plugin
         $browserLang = $request->getBrowserLanguage();
 
         $browserDetection = new BrowserDetection();
+        $clientHints = json_encode($request->getClientHints());
         if (
-            $settings->blockHeadless->getValue()
-            && $browserDetection->isHeadlessBrowser($request->getUserAgent())
+            $settings->blockHeadless->getValue() &&
+            (
+                $browserDetection->isHeadlessBrowser($request->getUserAgent()) ||
+                $browserDetection->isHeadlessBrowser($clientHints)
+            )
         ) {
             // note above user agent could have been overwritten with UA parameter but that's fine since it's easy to change useragent anyway
             Common::printDebug("Excluding visit as headless browser detected");

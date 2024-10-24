@@ -77,6 +77,20 @@ class TrackingSpamPreventionTest extends IntegrationTestCase
         $this->assertTrue($isExcluded);
     }
 
+    public function test_isExcludedVisit_whenHeadlessClientHint()
+    {
+        StaticContainer::get(SystemSettings::class)->blockHeadless->setValue(1);
+        Cache::clearCacheGeneral();
+
+        // set normal browser not a headless browser
+        $_SERVER['HTTP_USER_AGENT'] = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.0 Safari/537.36';
+        $excluded = $this->makeExcluded('22.22.22.22');
+        $excluded->request->setParam('uadata', '{"fullVersionList":[{"brand":"Not A(Brand","version":"99.0.0.0"},{"brand":"HeadlessChrome","version":"121.0.6167.57"},{"brand":"Chromium","version":"121.0.6167.57"}],"mobile":false,"model":"","platform":"Linux","platformVersion":"5.15.0"}');
+        $isExcluded = $excluded->isExcluded();
+        unset($_SERVER['HTTP_USER_AGENT']);
+        $this->assertTrue($isExcluded);
+    }
+
     public function test_isExcludedVisit_whenBlockedUserAgentDisabled()
     {
         StaticContainer::get(SystemSettings::class)->blockHeadless->setValue(0);
