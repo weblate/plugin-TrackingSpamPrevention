@@ -1,6 +1,9 @@
 ## Changelog
 
-# 5.0.4
+# 5.0.5 - 2024-10-24
+- Look for headless browser in clientHints to detect spam
+
+# 5.0.4 - 2024-10-21
 - Compatability with PHP 8.4
 
 # 5.0.3
