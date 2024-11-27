@@ -10,9 +10,9 @@
         "SettingBlockServerSideLibrariesTitle": "Tracking-Anfragen von serverseitigen Bibliotheken blockieren",
         "SettingExcludedCountriesDescription": "Keine Besucher aus diesen Ländern tracken. Besucher außerhalb Ihres Zielbereichs sind wahrscheinlich Bots oder Spammer, oder Sie können die Einstellung nutzen um Datenschutzrechtsprobleme in anderen Jurisdiktionen zu vermeiden.",
         "SettingExcludedCountriesTitle": "Länder ausschließen",
-        "SettingIncludedCountriesDescription": "Dies schließt alle anderen Länder aus. Die \"Länder ausschließen\" Einstellung enthält weitere Informationen.",
+        "SettingIncludedCountriesDescription": "Dies schließt alle anderen Länder aus. Die Einstellung \"Länder ausschließen\" enthält weitere Informationen.",
         "SettingIncludedCountriesTitle": "Nur Besucher aus diesen Ländern erfassen",
-        "SettingMaxActionsDescription": "Ein Standardwert von \"0\" zeichnet alle Aktionen auf. Die meisten Webseiten haben normalerweise nicht mehr als 100 bis 300. Es kann davon ausgegangen werden, dass andere Aktivitäten das Verfolgen von Spam, einem Bot oder einem Angriff sind. Matomo stoppt die Aufzeichnung weiterer Aktionen und blockiert ihre IP-Adressen für bis zu 24 Stunden, um die Serverlast zu reduzieren und die Datengenauigkeit zu wahren.",
+        "SettingMaxActionsDescription": "Ein Standardwert von \"0\" zeichnet alle Aktionen auf. Die meisten Webseiten haben normalerweise nicht mehr als 100 bis 300. Es kann davon ausgegangen werden, dass es sich bei anderen Aktivitäten um Spam, einen Bot oder einen Angriff handelt. Matomo stoppt die Aufzeichnung weiterer Aktionen und blockiert deren IP-Adressen für bis zu 24 Stunden, um die Serverlast zu reduzieren und die Datengenauigkeit zu wahren.",
         "SettingMaxActionsTitle": "Maximale aufzuzeichnende Aktionen pro Besuch",
         "SettingNotificationEmailDescription": "Diese E-Mail-Adresse wird informiert, wenn eine IP verbannt wurde, weil sie zu viele Aktionen ausgeführt hat. In Zukunft werden möglicherweise weitere Gründe für Benachrichtigungen dazukommen.",
         "SettingNotificationEmailTitle": "Benachrichtigungs-E-Mail"
