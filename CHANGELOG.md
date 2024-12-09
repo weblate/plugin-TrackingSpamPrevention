@@ -1,5 +1,8 @@
 ## Changelog
 
+# 5.0.6 - 2024-12-09
+- Fixed broken Azure link for looking up IP ranges
+
 # 5.0.5 - 2024-10-24
 - Look for headless browser in clientHints to detect spam
 
