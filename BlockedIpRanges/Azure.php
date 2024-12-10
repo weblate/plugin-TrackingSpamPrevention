@@ -54,10 +54,10 @@ class Azure implements IpRangeProviderInterface
         // The api itself we don't really want to use. We'd need a subscriptionId. Unless we fetch it on a matomo server and make it available through a JSON there but then not sure if we are allowed to do that
         // or can we get it differently? Like do they have a fixed URL or so?
         // seems we could maybe assume the URL always stays the same except for the date part but then we'd need to check which date works (I've seen older URLs with same strucutre only date different)
-        // might be easiest to fetch "confirmation" page and then extract the URL from there?
+        // might be easiest to fetch "details" page and then extract the URL from there?
         // should look like 'https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20201207.json'
 
-        $contentDownloadPage = Http::sendHttpRequest('https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519', 120);
+        $contentDownloadPage = Http::sendHttpRequest('https://www.microsoft.com/en-us/download/details.aspx?id=56519', 120);
         $prefixUrl = 'href="';
         $prefixStrLen = mb_strlen($prefixUrl, 'UTF-8');
         $posStart = mb_strpos($contentDownloadPage, $prefixUrl . 'https://download.microsoft.com/download/', 0, 'UTF-8');
