@@ -36,10 +36,15 @@ class BanIpNotificationEmail
             $mail->setFrom($mail->getFrom(), 'Web Analytics Reports');
         }
 
+
         $mailBody = 'This is for your information. The following IP was banned because visit tried to track more than ' . Common::sanitizeInputValue($maxActionsAllowed) . ' actions:';
         $mailBody .= PHP_EOL . PHP_EOL . '"' . Common::sanitizeInputValue($ipRange) . '"' . PHP_EOL;
         $instanceId = SettingsPiwik::getPiwikInstanceId();
-
+        $matomoUrl = SettingsPiwik::getPiwikUrl();
+        if (!empty($matomoUrl)) {
+            $url = parse_url($matomoUrl);
+            $matomoHost = $url['host'];
+        }
 
         if (!empty($_GET)) {
             $get = $_GET;
@@ -61,6 +66,9 @@ class BanIpNotificationEmail
 
         if (!empty($instanceId)) {
             $mailBody .= PHP_EOL . 'Instance ID: ' . Common::sanitizeInputValue($instanceId);
+        }
+        if (!empty($matomoHost)) {
+            $mailBody .= PHP_EOL . 'URL: ' . Common::sanitizeInputValue($matomoHost);
         }
         $mailBody .= PHP_EOL . 'Current date (UTC): ' . Common::sanitizeInputValue($nowDateTime) . '
 IP as detected in header: ' . Common::sanitizeInputValue($ip) . '

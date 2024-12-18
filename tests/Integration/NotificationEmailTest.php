@@ -43,6 +43,7 @@ class NotificationEmailTest extends IntegrationTestCase
 
 "10.10.10.10/12"
 
+URL: localhost
 Current date (UTC): 2020-12-14 01:42:27
 IP as detected in header: 127.0.0.1
 GET request info: []
