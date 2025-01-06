@@ -1,5 +1,8 @@
 ## Changelog
 
+# 5.0.7 - 2025-01-06
+- Added Matomo URL to email report
+
 # 5.0.6 - 2024-12-09
 - Fixed broken Azure link for looking up IP ranges
 
